@@ -1,0 +1,190 @@
+/* luisfellipe.com — identidade tipográfica (deriva do timbrado ADR-0028).
+   Tokens claros na raiz; escuro via prefers-color-scheme. Sem imagens, sem
+   fontes de rede: Palatino/Book Antiqua/Georgia + Century Schoolbook. */
+
+:root {
+  --papel: #FBFAF7;
+  --tinta: #1C1A17;
+  --grafite: #57534B;
+  --fio: #C9C2B6;
+  --vinho: #5E1A1D;      /* ala advocacia */
+  --petroleo: #1F3A4D;   /* ala engenharia/publicações */
+  --largura: 42rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papel: #14120F;
+    --tinta: #E8E4DC;
+    --grafite: #A39C8F;
+    --fio: #3D3931;
+    --vinho: #A04A4E;
+    --petroleo: #6E93AC;
+  }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { font-size: 100%; }
+
+body {
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: "Century Schoolbook", "C059", "Book Antiqua", Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main { flex: 1; width: 100%; max-width: var(--largura); margin: 0 auto; padding: 0 1.25rem; }
+
+a { color: inherit; }
+a:focus-visible { outline: 2px solid var(--grafite); outline-offset: 3px; }
+
+/* ---- identidade: nome, regra partida, versalete ---- */
+
+.identidade { text-align: center; padding: 4.5rem 1rem 0; }
+
+.identidade__nome {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(1.35rem, 4.5vw, 1.9rem);
+  letter-spacing: .30em;
+  text-indent: .30em; /* compensa o tracking no centramento */
+  text-transform: uppercase;
+}
+.identidade__nome a { text-decoration: none; }
+
+.regra {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  max-width: 118mm;
+  margin: 1.1rem auto .9rem;
+}
+.regra::before, .regra::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid var(--fio);
+}
+.regra__losango {
+  width: .45rem;
+  height: .45rem;
+  background: var(--vinho);
+  transform: rotate(45deg);
+  flex: none;
+}
+.regra--petroleo .regra__losango { background: var(--petroleo); }
+
+.versalete {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font-size: .72rem;
+  letter-spacing: .52em;
+  text-indent: .52em;
+  text-transform: uppercase;
+  color: var(--grafite);
+}
+.versalete--vinho { color: var(--vinho); }
+
+/* ---- landing ---- */
+
+.tese { text-align: center; margin: 2.6rem auto 0; max-width: 34rem; color: var(--grafite); }
+
+.alas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 3rem 0 2rem;
+}
+@media (max-width: 40rem) { .alas { grid-template-columns: 1fr; } }
+
+.ala {
+  border: 1px solid var(--fio);
+  border-top: 3px solid var(--petroleo);
+  padding: 1.4rem 1.3rem 1.2rem;
+  text-decoration: none;
+  display: block;
+}
+.ala--advocacia { border-top-color: var(--vinho); }
+.ala:hover .ala__entrar, .ala:focus-visible .ala__entrar { text-decoration: underline; }
+
+.ala__titulo {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font-size: .95rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  margin-bottom: .6rem;
+}
+.ala__texto { color: var(--grafite); font-size: .95rem; margin-bottom: .9rem; }
+.ala__entrar { font-size: .85rem; letter-spacing: .08em; }
+
+/* ---- páginas internas ---- */
+
+.pagina { padding-top: 3.2rem; }
+.pagina h1 {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font-weight: 400;
+  font-size: 1.15rem;
+  letter-spacing: .30em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.pagina h2 {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: .06em;
+  margin: 2.2rem 0 .7rem;
+}
+.pagina p { margin: .8rem 0; }
+.pagina ul { margin: .8rem 0 .8rem 1.2rem; }
+.pagina li { margin: .35rem 0; }
+
+.voltar {
+  display: inline-block;
+  margin: 2.2rem 0 0;
+  font-size: .85rem;
+  color: var(--grafite);
+  text-decoration: none;
+}
+.voltar:hover { text-decoration: underline; }
+
+.fecho { display: flex; justify-content: center; margin: 2.8rem 0 0; }
+.fecho .regra__losango { transform: rotate(45deg); }
+
+/* estado vazio das publicações */
+.vazio {
+  border: 1px dashed var(--fio);
+  padding: 1.3rem 1.4rem;
+  color: var(--grafite);
+  font-size: .95rem;
+  margin-top: 1.6rem;
+}
+
+/* ---- rodapé ---- */
+
+footer {
+  text-align: center;
+  padding: 2.6rem 1rem 2.2rem;
+}
+footer .filete {
+  width: 60mm;
+  max-width: 60%;
+  border-top: 1px solid var(--fio);
+  margin: 0 auto 1rem;
+}
+footer p {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+  font-size: .68rem;
+  letter-spacing: .32em;
+  text-indent: .32em;
+  text-transform: uppercase;
+  color: var(--grafite);
+}
+footer a { text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
