@@ -2,20 +2,22 @@
    fontes de rede: Palatino/Book Antiqua/Georgia + Century Schoolbook. */
 
 :root {
-  --papel: #FBFAF7;
-  --tinta: #1C1A17;
-  --grafite: #57534B;
-  --fio: #C9C2B6;
-  --vinho: #5E1A1D;
+  --papel: #F7F3EA;      /* papel quente, não branco de tela */
+  --tinta: #2A251F;      /* tinta parda: preto puro não existe em papel */
+  --grafite: #6B6357;
+  --fio: #CFC6B4;
+  --vinho: #AC5036;      /* barro queimado — a marca */
+  --ocre: #B08432;       /* segundo acento, para a marca do ensaio */
   --largura: 40rem;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --papel: #14120F;
-    --tinta: #E8E4DC;
-    --grafite: #A39C8F;
-    --fio: #3D3931;
-    --vinho: #A04A4E;
+    --papel: #181410;    /* mesma terra, do outro lado */
+    --tinta: #EEE7D2;
+    --grafite: #9A9182;
+    --fio: #3A342B;
+    --vinho: #C46A4C;
+    --ocre: #C9A04A;
   }
 }
 
@@ -32,6 +34,21 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+/* Grão do papel: dois gradientes cruzados em opacidade mínima. Sem imagem,
+   sem requisição de rede — o fundo deixa de ser uma chapa lisa de tela. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: .035;
+  background-image:
+    repeating-linear-gradient(0deg, var(--tinta) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, var(--tinta) 0 1px, transparent 1px 4px);
+}
+.topo, main, footer { position: relative; z-index: 1; }
 
 main { flex: 1; width: 100%; max-width: var(--largura); margin: 0 auto; padding: 0 1.25rem; }
 a { color: inherit; }
@@ -81,8 +98,32 @@ a:focus-visible { outline: 2px solid var(--grafite); outline-offset: 3px; }
 
 /* ---- rio de textos ---- */
 
-.rio__item { padding: 1.9rem 0; border-bottom: 1px solid var(--fio); }
+.rio__item { padding: 1.9rem 0; border-bottom: 1px solid var(--fio); position: relative; }
 .rio__item:last-child { border-bottom: none; }
+
+/* Marca de margem: o traço diz o formato antes de o olho ler a palavra.
+   Um traço para a contradita (a impugnação isolada); dois para o ensaio (o
+   argumento que precisa de espaço). É a única marca decorativa do site, e
+   carrega informação. */
+.rio__item::before,
+.texto::before {
+  content: "";
+  position: absolute;
+  left: -1.05rem;
+  width: 2px;
+  height: .78rem;
+  background: var(--vinho);
+}
+.rio__item::before { top: 2.28rem; }
+.texto::before { top: 2.9rem; }
+.rio__item[data-tipo="ensaio"]::before,
+.texto[data-tipo="ensaio"]::before {
+  background: var(--ocre);
+  box-shadow: 5px 0 0 0 var(--ocre);
+}
+@media (max-width: 46rem) {
+  .rio__item::before, .texto::before { display: none; }
+}
 
 .rio__meta, .texto__meta {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
@@ -123,7 +164,7 @@ a:focus-visible { outline: 2px solid var(--grafite); outline-offset: 3px; }
 
 /* ---- página de texto ---- */
 
-.texto { padding: 2.4rem 0 0; }
+.texto { padding: 2.4rem 0 0; position: relative; }
 .texto__titulo {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
   font-weight: 400;
