@@ -214,3 +214,9 @@ footer a:hover { text-decoration: underline; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
 }
+
+/* ---- fontes ao pé do texto ---- */
+.fontes { border-top: 1px solid var(--fio); margin-top: 2.4rem; padding-top: 1rem; }
+.fontes h2 { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; color: var(--grafite); font-weight: 400; margin: 0 0 .5rem; }
+.fontes ul { margin: 0 0 0 1.2rem; }
+.fontes li { font-size: .88rem; color: var(--grafite); margin: .25rem 0; }
