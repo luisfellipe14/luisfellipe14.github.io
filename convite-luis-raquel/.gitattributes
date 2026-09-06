@@ -1,0 +1,7 @@
+# Preserve iCalendar CRLF regardless of checkout platform.
+*.ics -text whitespace=cr-at-eol
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ttf binary
