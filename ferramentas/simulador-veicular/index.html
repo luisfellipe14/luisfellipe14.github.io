@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simulador de Risco Veicular & Prescrição de IPVA · Dr. Luis Fellipe Reis</title>
+<meta name="description" content="Simule o risco de execução fiscal, anulação de débitos prescritos de IPVA (art. 174 CTN) e viabilidade de bloqueio Renajud para veículo vendido sem transferência.">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body data-tool-slug="simulador-veicular">
+<header class="topo">
+  <a class="topo__nome" href="/">
+    <b>CONTRA</b><span>PROVA</span>
+  </a>
+  <nav class="topo__nav">
+    <a href="/">textos</a>
+    <a href="/advocacia/">advocacia</a>
+    <a href="/ferramentas/" class="ativo">ferramentas</a>
+    <a href="/sobre/">sobre</a>
+  </nav>
+</header>
+
+<main class="pagina-ampla">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="status-pill">
+      <span class="dot-pulso"></span> DIREITO VEICULAR &nbsp;·&nbsp; SIMULADOR ANALÍTICO PRELIMINAR
+    </div>
+    <h1 class="hero__titulo">Simulador de Risco Veicular & Prescrição de IPVA</h1>
+    <p class="hero__subtitulo">
+      Vendeu um veículo e o comprador não transferiu? Responda a 5 perguntas objetivas para calcular o nível de risco fiscal, a probabilidade de prescrição do IPVA e a medida judicial cabível para bloqueio imediato do veículo.
+    </p>
+  </section>
+
+  <!-- Card Interativo da Ferramenta -->
+  <section class="ferramenta-card">
+    <div class="ferramenta-card--header">
+      <span class="chip-meta">ETAPA DE DIAGNÓSTICO</span>
+      <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--tinta); margin-top: 0.35rem;">Parâmetros da Alienação do Veículo</h2>
+    </div>
+
+    <form id="form-simulador" onsubmit="return false;">
+      <!-- Pergunta 1: Ano da Venda -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">01 / 05</span>
+          <h3 class="pergunta-titulo">Em que ano ocorreu a venda e entrega do veículo?</h3>
+        </div>
+        <p class="pergunta-ajuda">Ano em que o comprador assumiu a posse física do carro ou da moto.</p>
+        <div class="campo-grid">
+          <div>
+            <label class="campo-label" for="ano-venda">Ano da Venda</label>
+            <select class="campo-select" id="ano-venda" name="ano_venda" required>
+              <option value="2026">2026</option>
+              <option value="2025">2025</option>
+              <option value="2024">2024</option>
+              <option value="2023">2023</option>
+              <option value="2022">2022</option>
+              <option value="2021" selected>2021</option>
+              <option value="2020">2020</option>
+              <option value="2019">2019</option>
+              <option value="2018">2018</option>
+              <option value="2017">2017</option>
+              <option value="2016">2016 ou anterior</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pergunta 2: Prova Documental -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">02 / 05</span>
+          <h3 class="pergunta-titulo">Qual comprovante você possui da negociação?</h3>
+        </div>
+        <p class="pergunta-ajuda">A prova da tradição é o elemento central para afastar a solidariedade (Súmula 585 do STJ).</p>
+        <div class="opcoes-lista">
+          <label class="opcao-card">
+            <input type="radio" name="documento" value="dut_cartorio" checked>
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Recibo de Compra e Venda (CRV/DUT) assinado ou com firma reconhecida</span>
+              <span class="opcao-detalhe">Documento formal assinado entre as partes na data da entrega.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="documento" value="contrato">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Contrato particular de compra e venda ou declaração assinada</span>
+              <span class="opcao-detalhe">Instrumento privado com valor, dados do comprador e do bem.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="documento" value="bancario">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Apenas comprovante bancário (Pix/TED) ou mensagens de WhatsApp</span>
+              <span class="opcao-detalhe">Comprovação eletrônica da tradição e do recebimento do preço.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="documento" value="nenhum">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Não tenho nenhum documento da negociação</span>
+              <span class="opcao-detalhe">Negociação estritamente verbal, sem recibo nem comprovantes salvos.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pergunta 3: Comunicação DETRAN -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">03 / 05</span>
+          <h3 class="pergunta-titulo">Foi realizada a Comunicação de Venda formal no DETRAN?</h3>
+        </div>
+        <p class="pergunta-ajuda">Comunicação formal nos termos do art. 134 do Código de Trânsito Brasileiro (CTB).</p>
+        <div class="opcoes-lista">
+          <label class="opcao-card">
+            <input type="radio" name="comunicacao" value="nao" checked>
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Não foi realizada</span>
+              <span class="opcao-detalhe">O veículo continua registrado exclusivamente no seu nome no DETRAN.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="comunicacao" value="sim">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Sim, foi protocolada formalmente</span>
+              <span class="opcao-detalhe">Existe protocolo de comunicação registrado no órgão de trânsito.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="comunicacao" value="nao_sei">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Não sei informar</span>
+              <span class="opcao-detalhe">Não possui certeza se o cartório ou despachante enviou o aviso.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pergunta 4: Situação dos Débitos -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">04 / 05</span>
+          <h3 class="pergunta-titulo">O que está sendo cobrado no seu nome atualmente?</h3>
+        </div>
+        <p class="pergunta-ajuda">Identifique as pendências ativas para determinar a urgência da medida.</p>
+        <div class="opcoes-lista">
+          <label class="opcao-card">
+            <input type="radio" name="debitos" value="execucao" checked>
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Execução Fiscal da SEFAZ, Protesto em Cartório ou Penhora de Contas</span>
+              <span class="opcao-detalhe">Cobrança judicial já ajuizada pelo Estado ou título protestado.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="debitos" value="ipva_aberto">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">IPVA e Licenciamento em aberto (Dívida Ativa estadual)</span>
+              <span class="opcao-detalhe">Débitos tributários lançados na SEFAZ sem execução judicial ainda.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="debitos" value="multas">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Multas de trânsito e pontuação na CNH</span>
+              <span class="opcao-detalhe">Infrações cometidas pelo comprador gerando risco de suspensão da carteira.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="debitos" value="sem_debito">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Ainda sem débitos, mas o comprador se recusa a transferir</span>
+              <span class="opcao-detalhe">Prevenção de passivo futuro antes que ocorram acidentes ou multas.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pergunta 5: Ano do Débito Mais Antigo -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">05 / 05</span>
+          <h3 class="pergunta-titulo">Qual é o ano do débito de IPVA mais antigo lançado?</h3>
+        </div>
+        <p class="pergunta-ajuda">O IPVA prescreve em 5 anos contados do lançamento definitivo (art. 174 do CTN).</p>
+        <div class="campo-grid">
+          <div>
+            <label class="campo-label" for="ano-debito">Ano do Débito mais Antigo</label>
+            <select class="campo-select" id="ano-debito" name="ano_debito">
+              <option value="2018">2018 ou anterior (Mais de 5 anos)</option>
+              <option value="2019">2019 (Mais de 5 anos)</option>
+              <option value="2020">2020 (Mais de 5 anos)</option>
+              <option value="2021">2021 (Limite qüinqüenal)</option>
+              <option value="2022">2022</option>
+              <option value="2023">2023</option>
+              <option value="2024">2024</option>
+              <option value="2025">2025</option>
+              <option value="nenhum">Não há débitos de IPVA</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <button type="button" class="btn btn-whatsapp" id="btn-calcular" style="width: 100%; min-height: 54px; font-size: 1.05rem;">
+          Gerar Diagnóstico Jurídico Imediato ↓
+        </button>
+      </div>
+    </form>
+
+    <!-- Painel de Resultados (revelado dinamicamente) -->
+    <div id="painel-resultado" class="resultado-painel" style="display: none;">
+      <div id="resultado-card" class="resultado-card">
+        <div class="resultado-topo">
+          <span id="resultado-badge" class="resultado-badge"></span>
+          <span class="chip-meta">RITO JUIZADO DA FAZENDA PÚBLICA</span>
+        </div>
+
+        <h3 id="resultado-titulo" class="resultado-titulo"></h3>
+        <p id="resultado-parecer" class="resultado-parecer"></p>
+
+        <ul id="resultado-pontos" class="resultado-pontos"></ul>
+
+        <div class="fundamento-box">
+          <strong>Fundamentação Primária:</strong>
+          <span id="resultado-fundamento"></span>
+        </div>
+
+        <div class="resultado-acoes">
+          <a id="btn-whatsapp-resultado" class="btn btn-whatsapp" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Falar com o Dr. Luis Fellipe sobre este caso</span>
+          </a>
+          <button type="button" class="btn-copiar" id="btn-copiar-resumo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span id="texto-btn-copiar">Copiar Diagnóstico</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Informativo -->
+  <section class="banner-cta">
+    <h3 class="banner-cta__titulo">Como ajuizar a ação em Cuiabá e todo o Brasil</h3>
+    <p class="banner-cta__desc">
+      O rito do Juizado Especial da Fazenda Pública permite a concessão de tutela de urgência (liminar) para inserir restrição de circulação Renajud no prontuário do veículo e oficiar a SEFAZ para suspender imediatamente as cobranças fiscais.
+    </p>
+    <a class="btn btn-secundario" href="/veiculos/">
+      Ler o Guia Completo sobre Bloqueio Renajud →
+    </a>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="rd-inner">
+    <div>
+      <p style="font-weight: 700; color: #fff; font-size: 1.1rem; margin-bottom: 0.5rem;">Dr. Luis Fellipe Reis</p>
+      <p style="color: var(--tinta-suave); font-size: 0.9rem;">Advocacia Estratégica & Precisão Técnica<br>OAB/MT 33.344/O</p>
+    </div>
+    <div class="rd-col">
+      <h3>Ferramentas</h3>
+      <a href="/ferramentas/simulador-veicular/">Simulador Veicular & IPVA</a>
+      <a href="/ferramentas/diagnostico-empresas/">Diagnóstico B2B PMEs</a>
+      <a href="/ferramentas/auditoria-imoveis/">Checklist Imobiliário</a>
+      <a href="/ferramentas/simulador-previdencia/">Simulador Previdenciário</a>
+    </div>
+    <div class="rd-col">
+      <h3>Contato</h3>
+      <p class="rd-rotulo">Cuiabá / MT</p>
+      <p>Atendimento presencial e 100% digital em todo o Brasil.</p>
+      <p class="rd-rotulo">E-mail</p>
+      <p><a href="mailto:contato@luisfellipe.com">contato@luisfellipe.com</a></p>
+    </div>
+  </div>
+  <div class="rd-base">
+    © 2026 Dr. Luis Fellipe Reis · Todos os direitos reservados. Conforme Provimento 205/2021 CFOAB.
+  </div>
+</footer>
+
+<script src="/assets/tracker.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var btnCalcular = document.getElementById('btn-calcular');
+  var painelResultado = document.getElementById('painel-resultado');
+  var resultadoCard = document.getElementById('resultado-card');
+  var resultadoBadge = document.getElementById('resultado-badge');
+  var resultadoTitulo = document.getElementById('resultado-titulo');
+  var resultadoParecer = document.getElementById('resultado-parecer');
+  var resultadoPontos = document.getElementById('resultado-pontos');
+  var resultadoFundamento = document.getElementById('resultado-fundamento');
+  var btnWhatsapp = document.getElementById('btn-whatsapp-resultado');
+  var btnCopiar = document.getElementById('btn-copiar-resumo');
+  var textoBtnCopiar = document.getElementById('texto-btn-copiar');
+
+  btnCalcular.addEventListener('click', function () {
+    var form = document.getElementById('form-simulador');
+    var anoVenda = parseInt(document.getElementById('ano-venda').value, 10);
+    var doc = form.elements['documento'].value;
+    var comunicacao = form.elements['comunicacao'].value;
+    var debitos = form.elements['debitos'].value;
+    var anoDebitoStr = document.getElementById('ano-debito').value;
+    var anoDebito = anoDebitoStr === 'nenhum' ? 9999 : parseInt(anoDebitoStr, 10);
+
+    var anoAtual = 2026;
+    var temPrescricao = (anoDebito <= (anoAtual - 5));
+    var temProvaSolida = (doc === 'dut_cartorio' || doc === 'contrato');
+
+    var nivelRisco = 'critico';
+    var titulo = '';
+    var parecer = '';
+    var pontos = [];
+    var fundamento = '';
+
+    if (debitos === 'execucao') {
+      nivelRisco = 'critico';
+      titulo = 'Risco Iminente de Bloqueio Patrimonial (Execução Fiscal Ativa)';
+      parecer = 'A existência de execução fiscal ou protesto em cartório exige medida judicial urgente. Mesmo sem comunicação de venda no DETRAN, a jurisprudência consolidada do STJ afasta a cobrança de IPVA do ex-proprietário a partir da prova da tradição.';
+      pontos.push('Urgência: Risco de penhora eletrônica em contas bancárias (Sisbajud) ou certidão positiva com efeito de negativa bloqueada.');
+      if (temPrescricao) {
+        pontos.push('Tese de Prescrição (CTN art. 174): Débitos lançados há mais de 5 anos sem citação válida prescreveram e devem ser extintos.');
+      }
+      pontos.push('Medida Judicial Cabível: Ação Anulatória de Débito Fiscal c/c Pedido de Liminar no Juizado Especial da Fazenda Pública.');
+      fundamento = 'Súmula 585 do STJ ("A responsabilidade solidária do ex-proprietário não alcança o IPVA") c/c art. 174 do CTN e REsp 1.144.982/PR.';
+    } else if (temPrescricao && debitos === 'ipva_aberto') {
+      nivelRisco = 'atencao';
+      titulo = 'Potencial Prescrição de IPVA Detectada (Débitos Anteriores a 2021)';
+      parecer = 'Identificamos débitos tributários de IPVA com mais de 5 anos de lançamento. Conforme o Código Tributário Nacional, a Fazenda Pública possui 5 anos para cobrar judicialmente o imposto. Ajuizando a ação com a prova da venda, é possível cancelar o débito e limpar o seu nome.';
+      pontos.push('Prescrição Quinquenal (Art. 174, CTN): O crédito tributário extingue-se em 5 anos a contar da data de sua constituição definitiva.');
+      pontos.push('Afastamento de Solidariedade: A responsabilidade tributária do IPVA é exclusivamente do adquirente após a posse do bem.');
+      pontos.push('Bloqueio de Circulação: Pedido de ordem judicial (Renajud) para apreensão do veículo em caso de blitz policial.');
+      fundamento = 'Art. 174 c/c art. 156, V do Código Tributário Nacional e Súmula 409 do STJ.';
+    } else if (debitos === 'multas') {
+      nivelRisco = 'atencao';
+      titulo = 'Risco de Perda da CNH por Infrações do Comprador';
+      parecer = 'O acúmulo de multas cometidas pelo comprador gera processo administrativo de suspensão ou cassação do direito de dirigir. Pela via judicial, é possível transferir a pontuação ao real condutor com base na comprovação da posse.';
+      pontos.push('Mitigação do Art. 134 do CTB: A ausência de comunicação no DETRAN gera presunção relativa, superada por prova idônea da venda.');
+      pontos.push('Transferência Compulsória: Determinação judicial ao DETRAN para alterar o cadastro definitivo do veículo.');
+      pontos.push('Exclusão de Pontos na CNH: Liminar para suspender a pontuação indevida vinculada ao seu prontuário de condutor.');
+      fundamento = 'Código de Trânsito Brasileiro art. 134 e jurisprudência pacificada do STJ (AgInt no REsp 1.833.805/SP).';
+    } else {
+      nivelRisco = 'favoravel';
+      titulo = 'Cenário Favorável para Transferência Compulsória e Bloqueio Preventivo';
+      parecer = 'Ajuizar a ação preventiva de obrigação de fazer antes do surgimento de dívidas fiscais ou acidentes protege o seu patrimônio de futuros bloqueios. O juiz determina a transferência e bloqueia a circulação até que o comprador compareça.';
+      pontos.push('Prevenção de Passivo: Evita o protesto em cartório do seu CPF e a instauração de dívida ativa.');
+      pontos.push('Bloqueio Renajud: Restrição total de circulação cadastrada no prontuário do veículo.');
+      pontos.push('Cominação de Multa Diária (Astreintes): Fixação de multa para forçar o comprador a transferir o bem.');
+      fundamento = 'Código Civil art. 492 (tradição) c/c Código de Processo Civil art. 536.';
+    }
+
+    // Configuração do Card de Resultado
+    resultadoCard.className = 'resultado-card resultado-card--' + nivelRisco;
+    resultadoBadge.className = 'resultado-badge resultado-badge--' + nivelRisco;
+    resultadoBadge.innerText = nivelRisco === 'critico' ? 'Risco Crítico / Ação Urgente' : (nivelRisco === 'atencao' ? 'Atenção / Prescrição Provável' : 'Procedimento Favorável');
+    resultadoTitulo.innerText = titulo;
+    resultadoParecer.innerText = parecer;
+
+    resultadoPontos.innerHTML = '';
+    pontos.forEach(function (p) {
+      var li = document.createElement('li');
+      li.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--marca-azul)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>' + p + '</span>';
+      resultadoPontos.appendChild(li);
+    });
+
+    resultadoFundamento.innerText = fundamento;
+
+    // Atualiza WhatsApp link pré-preenchido
+    var msgWhatsapp = 'Olá, Dr. Luis Fellipe. Fiz o Simulador Veicular no site:\n' +
+      '• Ano da venda: ' + anoVenda + '\n' +
+      '• Documento: ' + doc + '\n' +
+      '• Débitos: ' + debitos + '\n' +
+      '• Ano débito: ' + anoDebitoStr + '\n' +
+      '• Diagnóstico: ' + titulo + '\n' +
+      'Gostaria de saber como ajuizar a ação para regularizar meu nome.';
+    
+    var waUrl = 'https://wa.me/5565981098383?text=' + encodeURIComponent(msgWhatsapp);
+    btnWhatsapp.setAttribute('href', waUrl);
+
+    // Revela painel e rola suavemente
+    painelResultado.style.display = 'block';
+    painelResultado.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Registra evento de conclusão no tracker
+    if (window.ContraprovaTracker) {
+      window.ContraprovaTracker.recordToolUsage('simulador-veicular', 'complete');
+      window.ContraprovaTracker.enhanceWhatsAppLinks();
+    }
+  });
+
+  // Copiar Resumo
+  btnCopiar.addEventListener('click', function () {
+    var texto = 'DIAGNÓSTICO JURÍDICO VEICULAR - CONTRAPROVA\n' +
+      resultadoTitulo.innerText + '\n\n' +
+      resultadoParecer.innerText + '\n\n' +
+      'Fundamentação: ' + resultadoFundamento.innerText + '\n' +
+      'Simulação realizada em: ' + new Date().toLocaleDateString('pt-BR');
+
+    navigator.clipboard.writeText(texto).then(function () {
+      textoBtnCopiar.innerText = 'Copiado!';
+      setTimeout(function () { textoBtnCopiar.innerText = 'Copiar Diagnóstico'; }, 2500);
+    });
+  });
+});
+</script>
+</body>
+</html>

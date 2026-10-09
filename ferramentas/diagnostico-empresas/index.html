@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autodiagnóstico de Blindagem Contratual para PMEs · Dr. Luis Fellipe Reis</title>
+<meta name="description" content="Avalie em 6 perguntas a segurança jurídica da sua empresa: contratos de clientes, risco de pejotização, termos de sigilo (NDA) e cobrança rápida de inadimplentes.">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body data-tool-slug="diagnostico-empresas">
+<header class="topo">
+  <a class="topo__nome" href="/">
+    <b>CONTRA</b><span>PROVA</span>
+  </a>
+  <nav class="topo__nav">
+    <a href="/">textos</a>
+    <a href="/advocacia/">advocacia</a>
+    <a href="/ferramentas/" class="ativo">ferramentas</a>
+    <a href="/sobre/">sobre</a>
+  </nav>
+</header>
+
+<main class="pagina-ampla">
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="status-pill">
+      <span class="dot-pulso"></span> ASSESSORIA B2B &nbsp;·&nbsp; DIAGNÓSTICO DE RISCO CORPORATIVO
+    </div>
+    <h1 class="hero__titulo">Autodiagnóstico de Blindagem Contratual para PMEs</h1>
+    <p class="hero__subtitulo">
+      Avalie em menos de 3 minutos a maturidade jurídica da sua empresa. Descubra se os seus contratos protegem contra rescisões unilaterais, se há risco trabalhista na contratação de terceiros PJ e como recuperar faturas em atraso sem processos demorados.
+    </p>
+  </section>
+
+  <!-- Card do Diagnóstico -->
+  <section class="ferramenta-card">
+    <div class="ferramenta-card--header">
+      <span class="chip-meta">AVALIAÇÃO EM 6 DIMENSÕES</span>
+      <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--tinta); margin-top: 0.35rem;">Checklist de Segurança Operacional</h2>
+    </div>
+
+    <form id="form-diagnostico" onsubmit="return false;">
+      <!-- Pergunta 1: Contratos de Clientes -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">01 / 06</span>
+          <h3 class="pergunta-titulo">Como são formalizados os contratos de prestação com seus clientes?</h3>
+        </div>
+        <p class="pergunta-ajuda">A clareza do escopo e as regras de rescisão evitam litígios e retenções indevidas de pagamento.</p>
+        <div class="opcoes-lista">
+          <label class="opcao-card">
+            <input type="radio" name="p1" value="20" checked>
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Contratos personalizados com escopo fechado, prazo de aviso prévio e multa proporcional</span>
+              <span class="opcao-detalhe">Elaborados ou revisados por advogado para o modelo de negócios da sua empresa.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p1" value="10">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Modelos genéricos obtidos na internet ou adaptados de outras empresas</span>
+              <span class="opcao-detalhe">Possuem lacunas operacionais e cláusulas muitas vezes nulas ou inaplicáveis.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p1" value="0">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Acordo verbal, propostas ou orçamentos simples combinados por WhatsApp</span>
+              <span class="opcao-detalhe">Altíssima vulnerabilidade: qualquer disputa sobre entregas vira prejuízo.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pergunta 2: Contratação de Terceiros e PJs -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">02 / 06</span>
+          <h3 class="pergunta-titulo">Como a empresa contrata prestadores terceirizados e pessoas jurídicas (PJs)?</h3>
+        </div>
+        <p class="pergunta-ajuda">A fronteira entre prestação autônoma PJ e vínculo de emprego (CLT arts. 2º e 3º) é o maior foco de passivos trabalhistas.</p>
+        <div class="opcoes-lista">
+          <label class="opcao-card">
+            <input type="radio" name="p2" value="20" checked>
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Contrato civil formal de prestação com autonomia real, sem subordinação e sem exclusividade</span>
+              <span class="opcao-detalhe">Entrega orientada a resultados técnicos, com emissão correta de notas fiscais.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p2" value="10">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Contratamos PJ, mas existe controle de horário, crachá ou subordinação direta a gestor</span>
+              <span class="opcao-detalhe">Risco de reconhecimento judicial de vínculo empregatício retroativo na Justiça do Trabalho.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p2" value="0">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Pagamentos avulsos a pessoas físicas sem contrato formal ou emissão de RPA</span>
+              <span class="opcao-detalhe">Passivo fiscal (INSS patronal e IRRF) acumulado e risco trabalhista imediato.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pergunta 3: Sigilo e Proteção da Carteira (NDA) -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">03 / 06</span>
+          <h3 class="pergunta-titulo">Seus colaboradores e parceiros assinam Termo de Confidencialidade (NDA)?</h3>
+        </div>
+        <p class="pergunta-ajuda">Protege a base de dados de clientes, tabelas de preços, fornecedores e know-how exclusivo da sua operação.</p>
+        <div class="opcoes-lista">
+          <label class="opcao-card">
+            <input type="radio" name="p3" value="15" checked>
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Sim, termos formais de confidencialidade (NDA) com multa contratual expressa</span>
+              <span class="opcao-detalhe">Assinados com funcionários, terceirizados e parceiros comerciais.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p3" value="5">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Apenas uma frase de sigilo no contrato principal, sem penalidade clara</span>
+              <span class="opcao-detalhe">Dificulta a cobrança de indenização em caso de vazamento ou captação indevida de clientes.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p3" value="0">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Não temos termos de sigilo nem cláusulas de proteção da base de clientes</span>
+              <span class="opcao-detalhe">Risco de ex-colaborador abrir concorrência direta utilizando seus clientes e segredos.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pergunta 4: Título Executivo Extrajudicial -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">04 / 06</span>
+          <h3 class="pergunta-titulo">Seus contratos possuem força de Título Executivo Extrajudicial?</h3>
+        </div>
+        <p class="pergunta-ajuda">Conforme o art. 784, III do CPC, contratos assinados por 2 testemunhas ou com certificado Gov.br/ICP-Brasil dispensam ação de conhecimento e vão direto para penhora de contas.</p>
+        <div class="opcoes-lista">
+          <label class="opcao-card">
+            <input type="radio" name="p4" value="15" checked>
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Sim, possuem assinatura de 2 testemunhas ou assinatura digital qualificada (ICP/Gov.br)</span>
+              <span class="opcao-detalhe">Permitem ajuizar Ação de Execução direta com bloqueio judicial imediato em caso de inadimplência.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p4" value="5">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Assinados em plataformas digitais simples, mas sem o campo de duas testemunhas</span>
+              <span class="opcao-detalhe">Pode haver contestação judicial sobre a força executiva imediata do título.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p4" value="0">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Não colhemos assinaturas de testemunhas nem usamos certificação oficial</span>
+              <span class="opcao-detalhe">Exige processo comum de cobrança (anos de espera) para obter a primeira sentença.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pergunta 5: Notificação Extrajudicial -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">05 / 06</span>
+          <h3 class="pergunta-titulo">Qual o procedimento da empresa diante de faturas em atraso?</h3>
+        </div>
+        <p class="pergunta-ajuda">Notificação extrajudicial formal constitui em mora e resolve mais de 65% dos calotes amigavelmente.</p>
+        <div class="opcoes-lista">
+          <label class="opcao-card">
+            <input type="radio" name="p5" value="15" checked>
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Notificação extrajudicial formal com prazo peremptório e aviso de protesto</span>
+              <span class="opcao-detalhe">Enviada com comprovação de entrega antes de qualquer desgaste na justiça.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p5" value="5">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Cobranças informais insistentes por WhatsApp ou telefone sem formalização jurídica</span>
+              <span class="opcao-detalhe">Gera atrito relacional e muitas vezes não interrompe a prescrição da dívida.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p5" value="0">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Não temos régua de cobrança; os valores acabam virando prejuízo operacional</span>
+              <span class="opcao-detalhe">Erosão direta da margem de lucro e fluxo de caixa da empresa.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pergunta 6: Taxa de Inadimplência -->
+      <div class="pergunta-bloco">
+        <div class="pergunta-header">
+          <span class="pergunta-numero">06 / 06</span>
+          <h3 class="pergunta-titulo">Qual é a taxa média de inadimplência da sua carteira de clientes?</h3>
+        </div>
+        <p class="pergunta-ajuda">Percentual médio do faturamento mensal que fica retido em atraso.</p>
+        <div class="opcoes-lista">
+          <label class="opcao-card">
+            <input type="radio" name="p6" value="15" checked>
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Controlada: inferior a 3% do faturamento</span>
+              <span class="opcao-detalhe">Cobrança eficiente e baixo impacto na saúde financeira.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p6" value="5">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Moderada: entre 4% e 9% do faturamento</span>
+              <span class="opcao-detalhe">Prejudica o reinvestimento e pressiona o capital de giro.</span>
+            </div>
+          </label>
+          <label class="opcao-card">
+            <input type="radio" name="p6" value="0">
+            <div class="opcao-conteudo">
+              <span class="opcao-texto">Elevada: superior a 10% ou não monitorada com rigor</span>
+              <span class="opcao-detalhe">Sinal de alerta crítico na governança de crédito e cobrança da empresa.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div style="margin-top: 2rem;">
+        <button type="button" class="btn btn-whatsapp" id="btn-calcular-diag" style="width: 100%; min-height: 54px; font-size: 1.05rem;">
+          Calcular Score de Segurança Jurídica ↓
+        </button>
+      </div>
+    </form>
+
+    <!-- Painel de Resultados (revelado dinamicamente) -->
+    <div id="painel-resultado" class="resultado-painel" style="display: none;">
+      <div id="resultado-card" class="resultado-card">
+        <div class="resultado-topo">
+          <span id="resultado-badge" class="resultado-badge"></span>
+          <span id="resultado-pontuacao" class="chip-meta" style="font-size: 0.95rem; font-weight: 700; color: var(--marca-azul);"></span>
+        </div>
+
+        <h3 id="resultado-titulo" class="resultado-titulo"></h3>
+        <p id="resultado-parecer" class="resultado-parecer"></p>
+
+        <ul id="resultado-pontos" class="resultado-pontos"></ul>
+
+        <div class="fundamento-box">
+          <strong>Diretriz Estratégica:</strong>
+          <span id="resultado-fundamento"></span>
+        </div>
+
+        <div class="resultado-acoes">
+          <a id="btn-whatsapp-resultado" class="btn btn-whatsapp" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Agendar Diagnóstico Personalizado para a Empresa</span>
+          </a>
+          <button type="button" class="btn-copiar" id="btn-copiar-resumo">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span id="texto-btn-copiar">Copiar Resultado</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banner Informativo -->
+  <section class="banner-cta">
+    <h3 class="banner-cta__titulo">Programa de Assessoria Jurídica Recorrente (Retainer)</h3>
+    <p class="banner-cta__desc">
+      Conte com um departamento jurídico externo por assinatura mensal para revisar contratos, enviar notificações extrajudiciais e defender sua empresa com custos fixos e previsíveis.
+    </p>
+    <a class="btn btn-secundario" href="/empresas/">
+      Conhecer os Planos de Assessoria Empresarial →
+    </a>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="rd-inner">
+    <div>
+      <p style="font-weight: 700; color: #fff; font-size: 1.1rem; margin-bottom: 0.5rem;">Dr. Luis Fellipe Reis</p>
+      <p style="color: var(--tinta-suave); font-size: 0.9rem;">Advocacia Estratégica & Precisão Técnica<br>OAB/MT 33.344/O</p>
+    </div>
+    <div class="rd-col">
+      <h3>Ferramentas</h3>
+      <a href="/ferramentas/simulador-veicular/">Simulador Veicular & IPVA</a>
+      <a href="/ferramentas/diagnostico-empresas/">Diagnóstico B2B PMEs</a>
+      <a href="/ferramentas/auditoria-imoveis/">Checklist Imobiliário</a>
+      <a href="/ferramentas/simulador-previdencia/">Simulador Previdenciário</a>
+    </div>
+    <div class="rd-col">
+      <h3>Contato</h3>
+      <p class="rd-rotulo">Cuiabá / MT</p>
+      <p>Atendimento presencial e 100% digital em todo o Brasil.</p>
+      <p class="rd-rotulo">E-mail</p>
+      <p><a href="mailto:contato@luisfellipe.com">contato@luisfellipe.com</a></p>
+    </div>
+  </div>
+  <div class="rd-base">
+    © 2026 Dr. Luis Fellipe Reis · Todos os direitos reservados. Conforme Provimento 205/2021 CFOAB.
+  </div>
+</footer>
+
+<script src="/assets/tracker.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var btnCalcular = document.getElementById('btn-calcular-diag');
+  var painelResultado = document.getElementById('painel-resultado');
+  var resultadoCard = document.getElementById('resultado-card');
+  var resultadoBadge = document.getElementById('resultado-badge');
+  var resultadoPontuacao = document.getElementById('resultado-pontuacao');
+  var resultadoTitulo = document.getElementById('resultado-titulo');
+  var resultadoParecer = document.getElementById('resultado-parecer');
+  var resultadoPontos = document.getElementById('resultado-pontos');
+  var resultadoFundamento = document.getElementById('resultado-fundamento');
+  var btnWhatsapp = document.getElementById('btn-whatsapp-resultado');
+  var btnCopiar = document.getElementById('btn-copiar-resumo');
+  var textoBtnCopiar = document.getElementById('texto-btn-copiar');
+
+  btnCalcular.addEventListener('click', function () {
+    var form = document.getElementById('form-diagnostico');
+    var p1 = parseInt(form.elements['p1'].value, 10);
+    var p2 = parseInt(form.elements['p2'].value, 10);
+    var p3 = parseInt(form.elements['p3'].value, 10);
+    var p4 = parseInt(form.elements['p4'].value, 10);
+    var p5 = parseInt(form.elements['p5'].value, 10);
+    var p6 = parseInt(form.elements['p6'].value, 10);
+
+    var total = p1 + p2 + p3 + p4 + p5 + p6;
+
+    var nivelRisco = 'critico';
+    var titulo = '';
+    var parecer = '';
+    var pontos = [];
+    var fundamento = '';
+
+    if (total <= 45) {
+      nivelRisco = 'critico';
+      titulo = 'Vulnerabilidade Jurídica Crítica (Risco Alto de Perdas Financeiras)';
+      parecer = 'A sua empresa opera com exposição severa a litígios contratuais, passivos trabalhistas com terceiros PJ e dificuldade extrema de recuperar inadimplentes. Sem títulos executivos formais e com regras de sigilo frágeis, os prejuízos operacionais tendem a se acumular.';
+      pontos.push('Revisão Imediata de Contratos de Clientes: Inserção de escopo taxativo e regras de rescisão motivada/imotivada.');
+      pontos.push('Auditoria de Contratação PJ: Mitigação urgente de indícios de subordinação (CLT arts. 2º e 3º) para estancar risco trabalhista.');
+      pontos.push('Implementação de Título Executivo (CPC art. 784, III): Adaptação dos contratos para assinatura de 2 testemunhas ou Gov.br.');
+      fundamento = 'Implementação prioritária de Governança Contratual Preventiva para evitar ações rescisórias e execuções trabalhistas.';
+    } else if (total <= 75) {
+      nivelRisco = 'atencao';
+      titulo = 'Vulnerabilidade Moderada (Blindagem Parcial com Pontos Cegos)';
+      parecer = 'Sua empresa já possui práticas preventivas essenciais, mas mantém pontos cegos que reduzem a margem de lucro. A ausência de títulos executivos ágeis ou de termos formais de sigilo (NDA) deixa a empresa vulnerável quando clientes atrasam pagamentos ou quando terceiros saem da operação.';
+      pontos.push('Validação de NDAs: Blindagem formal do banco de clientes e do método operacional contra concorrência predatória.');
+      pontos.push('Régua Formal de Cobrança: Notificação extrajudicial com prazo de 48h antes de qualquer ajuizamento judicial.');
+      pontos.push('Cláusula Penal Proporcional: Revisão de multas rescisórias para evitar impugnação judicial por abuso de direito (CC art. 413).');
+      fundamento = 'Ajuste fino nos instrumentos contratuais existentes e implantação de régua pré-contenciosa de cobrança.';
+    } else {
+      nivelRisco = 'favoravel';
+      titulo = 'Excelente Maturidade Jurídica (Operação Estruturada)';
+      parecer = 'Parabéns. Sua empresa adota práticas maduras de governança jurídica. Os contratos possuem segurança formal e o risco de passivos trabalhistas ou calotes sem execução imediata é reduzido.';
+      pontos.push('Manutenção Preventiva Periódica: Auditoria semestral para atualização legislativa e jurisprudencial.');
+      pontos.push('Otimização Tributária de Contratos: Análise de retenções de ISS/PIS/COFINS e enquadramento societário.');
+      pontos.push('Canal de Retainer: Acesso rápido a advogado para pareceres pontuais antes de fechar grandes contas.');
+      fundamento = 'Manutenção de conformidade preventiva contínua (Compliance Contratual).';
+    }
+
+    resultadoCard.className = 'resultado-card resultado-card--' + nivelRisco;
+    resultadoBadge.className = 'resultado-badge resultado-badge--' + nivelRisco;
+    resultadoBadge.innerText = nivelRisco === 'critico' ? 'Vulnerabilidade Crítica' : (nivelRisco === 'atencao' ? 'Vulnerabilidade Moderada' : 'Blindagem Alta');
+    resultadoPontuacao.innerText = 'SCORE: ' + total + ' / 100';
+    resultadoTitulo.innerText = titulo;
+    resultadoParecer.innerText = parecer;
+
+    resultadoPontos.innerHTML = '';
+    pontos.forEach(function (p) {
+      var li = document.createElement('li');
+      li.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--marca-azul)" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span>' + p + '</span>';
+      resultadoPontos.appendChild(li);
+    });
+
+    resultadoFundamento.innerText = fundamento;
+
+    var msgWhatsapp = 'Olá, Dr. Luis Fellipe. Fiz o Autodiagnóstico de Blindagem Contratual no site:\n' +
+      '• Pontuação obtida: ' + total + ' de 100 pontos\n' +
+      '• Classificação: ' + titulo + '\n' +
+      'Gostaria de agendar uma análise dos contratos da minha empresa para blindar nossa operação.';
+
+    var waUrl = 'https://wa.me/5565981098383?text=' + encodeURIComponent(msgWhatsapp);
+    btnWhatsapp.setAttribute('href', waUrl);
+
+    painelResultado.style.display = 'block';
+    painelResultado.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    if (window.ContraprovaTracker) {
+      window.ContraprovaTracker.recordToolUsage('diagnostico-empresas', 'complete');
+      window.ContraprovaTracker.enhanceWhatsAppLinks();
+    }
+  });
+
+  btnCopiar.addEventListener('click', function () {
+    var texto = 'AUTODIAGNÓSTICO CONTRATUAL B2B - CONTRAPROVA\n' +
+      resultadoPontuacao.innerText + '\n' +
+      resultadoTitulo.innerText + '\n\n' +
+      resultadoParecer.innerText + '\n\n' +
+      'Diretriz: ' + resultadoFundamento.innerText + '\n' +
+      'Avaliação em: ' + new Date().toLocaleDateString('pt-BR');
+
+    navigator.clipboard.writeText(texto).then(function () {
+      textoBtnCopiar.innerText = 'Copiado!';
+      setTimeout(function () { textoBtnCopiar.innerText = 'Copiar Resultado'; }, 2500);
+    });
+  });
+});
+</script>
+</body>
+</html>

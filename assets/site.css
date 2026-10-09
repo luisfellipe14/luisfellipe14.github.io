@@ -687,3 +687,323 @@ footer a:hover {
     padding: 2.5rem 1rem calc(2rem + env(safe-area-inset-bottom, 0px));
   }
 }
+
+/* ==========================================================================
+   FERRAMENTAS & SIMULADORES INTERATIVOS (Dark Luxury Bento Craft)
+   ========================================================================== */
+
+.ferramenta-card {
+  background: var(--superficie);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--borda);
+  box-shadow: var(--sombra-card), var(--brilho-topo);
+  border-radius: var(--raio-lg);
+  padding: 2.5rem;
+  margin: 2rem 0;
+  position: relative;
+}
+
+.ferramenta-card--header {
+  border-bottom: 1px solid var(--borda-fina);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pergunta-bloco {
+  margin-bottom: 2rem;
+}
+.pergunta-bloco:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.pergunta-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.pergunta-numero {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--marca-azul);
+  text-transform: uppercase;
+}
+
+.pergunta-titulo {
+  font-size: 1.12rem;
+  font-weight: 600;
+  color: var(--tinta);
+  line-height: 1.35;
+}
+
+.pergunta-ajuda {
+  font-size: 0.88rem;
+  color: var(--tinta-suave);
+  margin-bottom: 1rem;
+  line-height: 1.45;
+}
+
+/* Opções Interativas Selecionáveis */
+.opcoes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.opcao-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+  background: rgba(14, 17, 24, 0.6);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+.opcao-card:hover {
+  background: var(--superficie-hover);
+  border-color: var(--borda-hover);
+}
+.opcao-card input[type="radio"],
+.opcao-card input[type="checkbox"] {
+  margin-top: 0.25rem;
+  accent-color: var(--marca-azul);
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.opcao-card.selecionado,
+.opcao-card:has(input:checked) {
+  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(56, 189, 248, 0.45);
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.25);
+}
+
+.opcao-conteudo {
+  flex: 1;
+}
+.opcao-texto {
+  display: block;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--tinta);
+  line-height: 1.35;
+}
+.opcao-detalhe {
+  display: block;
+  font-size: 0.84rem;
+  color: var(--tinta-fraca);
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+/* Campos de Entrada Numérica / Select */
+.campo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.campo-label {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+  margin-bottom: 0.45rem;
+}
+
+.campo-input,
+.campo-select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  color: var(--tinta);
+  background: rgba(8, 9, 13, 0.7);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio-sm);
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.campo-input:focus,
+.campo-select:focus {
+  border-color: var(--marca-azul);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+}
+
+/* Painel de Resultados Dinâmicos */
+.resultado-painel {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--borda-fina);
+}
+
+.resultado-card {
+  padding: 2rem;
+  border-radius: var(--raio);
+  border: 1px solid var(--borda);
+  background: rgba(14, 17, 24, 0.95);
+  box-shadow: var(--sombra-card);
+  position: relative;
+  overflow: hidden;
+  animation: surgimentoSuave 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes surgimentoSuave {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.resultado-card--critico {
+  border-color: rgba(244, 63, 94, 0.4);
+  box-shadow: 0 8px 32px rgba(244, 63, 94, 0.12), inset 0 1px 0 rgba(244, 63, 94, 0.25);
+}
+.resultado-card--atencao {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.12), inset 0 1px 0 rgba(245, 158, 11, 0.25);
+}
+.resultado-card--favoravel {
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.12), inset 0 1px 0 rgba(56, 189, 248, 0.25);
+}
+
+.resultado-topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.resultado-badge {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.resultado-badge--critico {
+  background: rgba(244, 63, 94, 0.15);
+  color: #FB7185;
+  border: 1px solid rgba(244, 63, 94, 0.35);
+}
+.resultado-badge--atencao {
+  background: rgba(245, 158, 11, 0.15);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+.resultado-badge--favoravel {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.resultado-titulo {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--tinta);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.resultado-parecer {
+  font-size: 1.02rem;
+  color: var(--tinta-suave);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.resultado-pontos {
+  list-style: none;
+  margin: 1.25rem 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.resultado-pontos li {
+  font-size: 0.94rem;
+  color: var(--tinta-suave);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  line-height: 1.5;
+}
+.resultado-pontos svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+}
+
+.fundamento-box {
+  background: rgba(8, 9, 13, 0.7);
+  border: 1px solid var(--borda-fina);
+  border-radius: var(--raio-sm);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.75rem;
+  font-size: 0.88rem;
+  color: var(--tinta-fraca);
+  line-height: 1.5;
+}
+.fundamento-box strong {
+  color: var(--tinta-suave);
+}
+
+.resultado-acoes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-copiar {
+  background: transparent;
+  color: var(--tinta-suave);
+  border: 1px solid var(--borda);
+  padding: 0.85rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-copiar:hover {
+  background: var(--superficie-hover);
+  color: var(--tinta);
+  border-color: var(--borda-hover);
+}
+
+@media (max-width: 640px) {
+  .ferramenta-card {
+    padding: 1.5rem 1.15rem;
+    border-radius: var(--raio);
+  }
+  .resultado-card {
+    padding: 1.5rem 1.15rem;
+  }
+  .resultado-acoes {
+    flex-direction: column;
+    width: 100%;
+  }
+  .resultado-acoes .btn,
+  .resultado-acoes .btn-copiar {
+    width: 100%;
+    justify-content: center;
+  }
+}
